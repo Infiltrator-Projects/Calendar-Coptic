@@ -25,6 +25,14 @@
 #define CALENDAR_RESOURCE_EXPORT
 #endif
 
+/* The ICU-backed formatter and the arithmetic callbacks share this
+ * UTC-noon domain. Reject before narrowing extreme JDNs into civil fields. */
+static bool provider_jdn_supported(int64_t jdn)
+{
+    return jdn >= INT64_C(2440588) - INT64_C(100000000) &&
+           jdn <= INT64_C(2440588) + INT64_C(99999999);
+}
+
 static bool
 provider_fields(const InfiltratrTemporalCalendarProvider *provider,
                 int64_t jdn,
@@ -33,7 +41,7 @@ provider_fields(const InfiltratrTemporalCalendarProvider *provider,
     CalendarCalendarFields native_fields;
 
     (void)provider;
-    if (fields == NULL ||
+    if (fields == NULL || !provider_jdn_supported(jdn) ||
         !calendar_arithmetic_coptic_fields_from_jdn(
             CALENDAR_CALENDAR_MODE_COPTIC, jdn, &native_fields))
     {
@@ -116,7 +124,9 @@ provider_period_start(const InfiltratrTemporalCalendarProvider *provider,
     if (result == NULL || !provider_fields(provider, jdn, &fields))
         return false;
     fields.day = 1;
-    *result = fields_to_jdn(&fields);
+    const int64_t candidate = fields_to_jdn(&fields);
+    if (!provider_jdn_supported(candidate)) return false;
+    *result = candidate;
     return true;
 }
 
@@ -145,7 +155,9 @@ provider_add_periods(const InfiltratrTemporalCalendarProvider *provider,
     fields.day = MIN(
         fields.day,
         calendar_arithmetic_coptic_month_length(year, fields.month));
-    *result = fields_to_jdn(&fields);
+    const int64_t candidate = fields_to_jdn(&fields);
+    if (!provider_jdn_supported(candidate)) return false;
+    *result = candidate;
     return true;
 }
 
@@ -166,7 +178,9 @@ provider_add_years(const InfiltratrTemporalCalendarProvider *provider,
     fields.day = MIN(
         fields.day,
         calendar_arithmetic_coptic_month_length(year, fields.month));
-    *result = fields_to_jdn(&fields);
+    const int64_t candidate = fields_to_jdn(&fields);
+    if (!provider_jdn_supported(candidate)) return false;
+    *result = candidate;
     return true;
 }
 
