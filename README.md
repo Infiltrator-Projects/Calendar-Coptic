@@ -47,4 +47,4 @@ Run the downloaded `.run --profile aggressive` as an ordinary user. It provision
 Each package owns only this provider and its passive documentation. Its `Replaces` declaration transfers this module from `infiltrator-calendar-resources` on existing machines; other modules and Common source remain intact. Native package versions use `+native1` so a same-version generic package does not replace a local optimized build. See [packaging details](docs/PACKAGING.md).
 
 ## Two-file calendar package (v1.0.2)
-Only `Coptic Calendar.so` and an illustrated `Coptic Calendar.pdf` are installed. Native build evidence is in dpkg control fields; developer records remain in GitHub.
+Only `Coptic Calendar.so` and an illustrated `Calendar-Coptic.pdf` are installed. Native build evidence is in dpkg control fields; developer records remain in GitHub.
