@@ -2,7 +2,7 @@
   "title": "Coptic Calendar",
   "intro": "The Coptic calendar is the Alexandrian civil and religious chronology used by Egypt's Coptic Christian tradition and in agricultural dating.",
   "epoch": "Year 1 of the Anno Martyrum (A.M.) era begins in AD 284, associated with the reign of Diocletian. The New Year is called Nayrouz.",
-  "structure": "Months 1–12 contain 30 days each. Month 13, Nasie, has five days ordinarily and six in the Alexandrian four-year leap cycle.",
+  "structure": "Months 1–12 contain 30 days each. Month 13, Nasie, has five days ordinarily and six when the arithmetic year has positive remainder 3 modulo 4.",
   "sections": [
     {
       "name": "Thout",
@@ -59,10 +59,11 @@
   ],
   "example": "After day 30 of Mesori, Nasie completes the year; after its final day, the new year starts at Thout 1.",
   "history": "The calendar developed from the Alexandrian reform of the older Egyptian civil year and remains important in Coptic Orthodox life.",
-  "model": "The provider uses the fixed Coptic/Alexandrian four-year leap cycle and the Coptic epoch; the underlying day coordinate is independent of the displayed era.",
+  "model": "The provider uses JDN 1825030 as the arithmetic epoch. For arithmetic year y, month m and day d, JDN = 1825030 - 1 + 365*(y-1) + floor(y/4) + 30*(m-1) + d. The inverse year is floor((4*(JDN-1825030)+1463)/1461). The underlying day coordinate is independent of the displayed era.",
   "limits": "This is the Coptic/Alexandrian arithmetic model, not ancient Egyptian regnal chronology. Month names vary by transliteration; Julian/Gregorian correspondences shift.",
   "sources": [
     "https://www.timeanddate.com/calendar/coptic-calendar.html",
-    "https://github.com/Infiltrator-Projects/Calendar-Coptic"
+    "https://github.com/Infiltrator-Projects/Calendar-Coptic",
+    "Arithmetic implementation: https://github.com/Infiltrator-Projects/Calendar-Coptic/blob/main/src/calendars/engine/calendar-arithmetic-coptic.c"
   ]
 }
