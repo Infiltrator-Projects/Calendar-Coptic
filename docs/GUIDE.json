@@ -1,13 +1,8 @@
 {
   "title": "Coptic Calendar",
-  "intro": "The Coptic calendar is used by Egypt's Coptic Christian tradition and agricultural dating.",
-  "summary": "A regular Alexandrian year with a short final month.",
+  "intro": "The Coptic calendar is the Alexandrian civil and religious chronology used by Egypt's Coptic Christian tradition and in agricultural dating.",
   "epoch": "Year 1 of the Anno Martyrum (A.M.) era begins in AD 284, associated with the reign of Diocletian. The New Year is called Nayrouz.",
-  "year_rule": "Months 1–12 contain 30 days each. Month 13, Nasie, has five days ordinarily and six in the Alexandrian four-year leap cycle.",
-  "history": "The calendar developed from the Alexandrian reform of the older Egyptian civil year. It remains important in Coptic Orthodox life; its Era of the Martyrs is distinct from the Common Era.",
-  "limits": "This is the Coptic/Alexandrian arithmetic model, not ancient Egyptian regnal chronology. Month names vary by transliteration; Julian/Gregorian correspondences shift.",
-  "source": "https://www.timeanddate.com/calendar/coptic-calendar.html\nhttps://github.com/Infiltrator-Projects/Calendar-Coptic",
-  "example": "After day 30 of Mesori, Nasie completes the year; after its final day, the new year starts at Thout 1.",
+  "structure": "Months 1–12 contain 30 days each. Month 13, Nasie, has five days ordinarily and six in the Alexandrian four-year leap cycle.",
   "sections": [
     {
       "name": "Thout",
@@ -62,5 +57,12 @@
       "days": "5 or 6 days"
     }
   ],
-  "model": "The provider uses the fixed Coptic/Alexandrian four-year leap cycle and the Coptic epoch; the underlying day coordinate is independent of the displayed era."
+  "example": "After day 30 of Mesori, Nasie completes the year; after its final day, the new year starts at Thout 1.",
+  "history": "The calendar developed from the Alexandrian reform of the older Egyptian civil year and remains important in Coptic Orthodox life.",
+  "model": "The provider uses the fixed Coptic/Alexandrian four-year leap cycle and the Coptic epoch; the underlying day coordinate is independent of the displayed era.",
+  "limits": "This is the Coptic/Alexandrian arithmetic model, not ancient Egyptian regnal chronology. Month names vary by transliteration; Julian/Gregorian correspondences shift.",
+  "sources": [
+    "https://www.timeanddate.com/calendar/coptic-calendar.html",
+    "https://github.com/Infiltrator-Projects/Calendar-Coptic"
+  ]
 }
