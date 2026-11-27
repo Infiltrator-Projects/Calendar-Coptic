@@ -3,34 +3,64 @@
   "intro": "The Coptic calendar is used by Egypt's Coptic Christian tradition and agricultural dating.",
   "summary": "A regular Alexandrian year with a short final month.",
   "epoch": "Year 1 of the Anno Martyrum (A.M.) era begins in AD 284, associated with the reign of Diocletian. The New Year is called Nayrouz.",
-  "epoch_heading": "ERA AND NEW YEAR",
-  "months": 13,
-  "month_names": [
-    "Thout",
-    "Paopi",
-    "Hathor",
-    "Koiak",
-    "Tobi",
-    "Meshir",
-    "Paremhat",
-    "Parmouti",
-    "Pashons",
-    "Paoni",
-    "Epip",
-    "Mesori",
-    "Nasie"
-  ],
   "year_rule": "Months 1–12 contain 30 days each. Month 13, Nasie, has five days ordinarily and six in the Alexandrian four-year leap cycle.",
-  "bar_caption": "12 MONTHS OF 30 DAYS  +  SHORT MONTH",
-  "bar_highlight": "NASIE: FIVE OR SIX DAYS",
-  "period_heading": "THE THIRTEEN COPTIC MONTHS",
-  "after_heading": "THE SHORT FINAL MONTH",
-  "after_note": "After day 30 of Mesori, Nasie completes the year; after its final day, the new year starts at Thout 1.",
-  "history_heading": "WHY THIS CALENDAR MATTERS",
   "history": "The calendar developed from the Alexandrian reform of the older Egyptian civil year. It remains important in Coptic Orthodox life; its Era of the Martyrs is distinct from the Common Era.",
   "limits": "This is the Coptic/Alexandrian arithmetic model, not ancient Egyptian regnal chronology. Month names vary by transliteration; Julian/Gregorian correspondences shift.",
-  "comparison_top": "TWELVE 30-DAY MONTHS  /  REGULAR PATTERN",
-  "comparison_bottom": "NASIE  /  LEAP YEAR ADDS ONE DAY",
-  "drifts": false,
-  "source": "https://www.timeanddate.com/calendar/coptic-calendar.html\nhttps://github.com/Infiltrator-Projects/Calendar-Coptic"
+  "source": "https://www.timeanddate.com/calendar/coptic-calendar.html\nhttps://github.com/Infiltrator-Projects/Calendar-Coptic",
+  "example": "After day 30 of Mesori, Nasie completes the year; after its final day, the new year starts at Thout 1.",
+  "sections": [
+    {
+      "name": "Thout",
+      "days": "30 days"
+    },
+    {
+      "name": "Paopi",
+      "days": "30 days"
+    },
+    {
+      "name": "Hathor",
+      "days": "30 days"
+    },
+    {
+      "name": "Koiak",
+      "days": "30 days"
+    },
+    {
+      "name": "Tobi",
+      "days": "30 days"
+    },
+    {
+      "name": "Meshir",
+      "days": "30 days"
+    },
+    {
+      "name": "Paremhat",
+      "days": "30 days"
+    },
+    {
+      "name": "Parmouti",
+      "days": "30 days"
+    },
+    {
+      "name": "Pashons",
+      "days": "30 days"
+    },
+    {
+      "name": "Paoni",
+      "days": "30 days"
+    },
+    {
+      "name": "Epip",
+      "days": "30 days"
+    },
+    {
+      "name": "Mesori",
+      "days": "30 days"
+    },
+    {
+      "name": "Nasie",
+      "days": "5 or 6 days"
+    }
+  ],
+  "model": "The provider uses the fixed Coptic/Alexandrian four-year leap cycle and the Coptic epoch; the underlying day coordinate is independent of the displayed era."
 }
